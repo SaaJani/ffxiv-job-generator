@@ -17,7 +17,7 @@
 <div class="hero" style="background-image: url('{bannerImg}')">
 	<div class="hero-actions">
 		<Button onclick={() => (showJobRoulette = !showJobRoulette)} text="Generate Job" />
-		<Button onclick={() => (showInventory = !showInventory)} text="Best-In-Slot" />
+		<Button onclick={() => (showInventory = !showInventory)} text="Inventory" />
 	</div>
 </div>
 

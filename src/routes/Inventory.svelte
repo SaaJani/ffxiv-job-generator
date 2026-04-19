@@ -35,25 +35,29 @@
 	{/snippet}
 
 	<div class="itemSheet">
-		{#each slots as item, index (index)}
-			{#if item}
-				<div class="slot">
-					<img
-						class="itemSheetIcon"
-						src="https://v2.xivapi.com/api/asset/{item.icon_hr1}?format=png"
-						alt="Icon of Item"
-					/>
-					<div class="slot-info">
-						<span class="slot-name" title={item.name}>{item.name}</span>
-						<span class="slot-power">Power: {item.power}</span>
+		{#if !character.bisItems}
+			<div class="empty-state"><p>Generate a Job first!</p></div>
+		{:else}
+			{#each slots as item, index (index)}
+				{#if item}
+					<div class="slot">
+						<img
+							class="itemSheetIcon"
+							src="https://v2.xivapi.com/api/asset/{item.icon_hr1}?format=png"
+							alt="Icon of Item"
+						/>
+						<div class="slot-info">
+							<span class="slot-name" title={item.name}>{item.name}</span>
+							<span class="slot-power">Power: {item.power}</span>
+						</div>
 					</div>
-				</div>
-			{:else}
-				<div class="slot empty">
-					<p>Not needed for your job!</p>
-				</div>
-			{/if}
-		{/each}
+				{:else}
+					<div class="slot empty">
+						<p>Not needed for your job!</p>
+					</div>
+				{/if}
+			{/each}
+		{/if}
 	</div>
 </Modal>
 
@@ -117,6 +121,24 @@
 	}
 
 	.slot.empty p {
+		margin: 0;
+	}
+
+	.empty-state {
+		grid-column: 1 / -1;
+		display: flex;
+		justify-content: center;
+		padding: 3rem;
+		color: #94a3b8;
+		font-size: 1.1rem;
+		font-style: italic;
+		background-color: #1e293b;
+		border: 2px dashed #475569;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.empty-state p {
 		margin: 0;
 	}
 

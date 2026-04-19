@@ -52,7 +52,14 @@
 	{/snippet}
 
 	{#snippet footer()}
-		<Button onclick={() => generateJob()} text="Randomize Job" />
+		<Button
+			onclick={() => {
+				generateJob();
+				showJobRoulette = !showJobRoulette;
+			}}
+			disabled={wantedJobs.length <= 0 && wantedRoles.length <= 0}
+			text="Randomize Job"
+		/>
 	{/snippet}
 
 	<div class="tab-group">

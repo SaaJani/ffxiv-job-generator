@@ -20,7 +20,7 @@
 		{#if !character.job}
 			<div class="welcome-text">
 				<h4>1. Generate a Job</h4>
-				<h4>2. Open inventory for gear appropriate for your job</h4>
+				<h4>2. Open inventory for gear appropriate for your Job</h4>
 			</div>
 		{:else}
 			<div class="job-display">

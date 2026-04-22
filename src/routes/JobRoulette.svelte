@@ -51,16 +51,10 @@
 		</div>
 	{/snippet}
 
-	{#snippet footer()}
-		<Button
-			onclick={() => {
-				generateJob();
-				showJobRoulette = !showJobRoulette;
-			}}
-			disabled={wantedJobs.length <= 0 && wantedRoles.length <= 0}
-			text="Randomize Job"
-		/>
-	{/snippet}
+	<p>
+		Choose the Jobs or Roles that you want to add to the pool that's used to randomly select your
+		job
+	</p>
 
 	<div class="tab-group">
 		<button
@@ -105,6 +99,17 @@
 			{/each}
 		</div>
 	{/if}
+
+	{#snippet footer()}
+		<Button
+			onclick={() => {
+				generateJob();
+				showJobRoulette = !showJobRoulette;
+			}}
+			disabled={wantedJobs.length <= 0 && wantedRoles.length <= 0}
+			text="Randomize Job"
+		/>
+	{/snippet}
 </Modal>
 
 <style>
